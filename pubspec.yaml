@@ -1,0 +1,39 @@
+name: hive_notes_app
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  buildcondition: ^0.0.4
+  intl: ^0.18.1
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.0
+  dio: ^5.1.1
+  hexcolor: ^3.0.1
+  shared_preferences: ^2.0.5
+  desktop_window: ^0.4.0
+  responsive_builder: ^0.6.4
+  font_awesome_flutter: ^10.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo/Cairo-Bold.ttf
+        - asset: fonts/Poppins/Poppins-Regular.ttf
+        - asset: fonts/Poppins/Poppins-Bold.ttf
+
+
+  uses-material-design: true

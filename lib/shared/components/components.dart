@@ -15,7 +15,7 @@ Widget buildNoteItem() => Container(
               style: TextStyle(color: Colors.black, fontSize: 26),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.only(top: 12.0),
+              padding: EdgeInsets.only(top: 12.0),
               child: Text('Build Your Carrier with Eslam Younis',
                   style: TextStyle(
                       color: Colors.black.withOpacity(0.5), fontSize: 18)),

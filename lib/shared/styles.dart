@@ -11,7 +11,8 @@ ThemeData darkTheme = ThemeData(
         elevation: 15,
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.red, statusBarBrightness: Brightness.light),
+            statusBarColor: Colors.green,
+            statusBarBrightness: Brightness.light),
         titleTextStyle: TextStyle(
             color: Colors.white,
             fontSize: 20,

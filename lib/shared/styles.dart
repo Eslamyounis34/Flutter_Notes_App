@@ -4,9 +4,10 @@ import 'package:hexcolor/hexcolor.dart';
 
 ThemeData darkTheme = ThemeData(
     fontFamily: 'Poppins',
-    scaffoldBackgroundColor: HexColor('333739'),
+    // scaffoldBackgroundColor: HexColor('333739'),
+    scaffoldBackgroundColor: Colors.black,
     primarySwatch: Colors.deepOrange,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
         backgroundColor: Colors.red,
         elevation: 15,
         centerTitle: true,
@@ -17,7 +18,7 @@ ThemeData darkTheme = ThemeData(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'Cairo')),
+            fontFamily: 'Poppins')),
     textTheme: const TextTheme(
         bodyLarge: TextStyle(
             color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600)));

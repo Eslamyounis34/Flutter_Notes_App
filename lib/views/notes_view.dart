@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_notes_app/shared/components/components.dart';
+import 'package:hive_notes_app/widgets/add_note_bottom_sheet.dart';
 
 import '../widgets/custom_app_bar.dart';
 import '../widgets/notes_list_view.dart';
@@ -15,18 +16,21 @@ class NotesView extends StatelessWidget {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return Container(
-                  color: Colors.black,
-                );
-              });
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.grey,
-      ),
+          onPressed: () {
+            showModalBottomSheet(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16))),
+                context: context,
+                builder: (context) {
+                  return AddNoteBottomSheet();
+                });
+          },
+          child: Icon(Icons.add),
+          backgroundColor: Colors.grey,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(

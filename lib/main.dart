@@ -3,7 +3,7 @@ import 'package:hive_notes_app/shared/styles.dart';
 import 'package:hive_notes_app/views/notes_view.dart';
 
 void main() {
-  runApp(const NotesApp());
+  runApp(NotesApp());
 }
 
 class NotesApp extends StatelessWidget {

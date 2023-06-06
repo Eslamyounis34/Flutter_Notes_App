@@ -4,11 +4,9 @@ import 'package:hexcolor/hexcolor.dart';
 
 ThemeData darkTheme = ThemeData(
     fontFamily: 'Poppins',
-    // scaffoldBackgroundColor: HexColor('333739'),
-    scaffoldBackgroundColor: Colors.black,
-    primarySwatch: Colors.deepOrange,
+    scaffoldBackgroundColor: HexColor('333739'),
     appBarTheme: AppBarTheme(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blueGrey,
         elevation: 15,
         centerTitle: true,
         systemOverlayStyle: SystemUiOverlayStyle(

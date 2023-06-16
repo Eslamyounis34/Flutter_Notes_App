@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:hive_notes_app/shared/constants.dart';
 import 'package:hive_notes_app/widgets/custom_text_field.dart';
+
+import 'custom_button.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({super.key});
@@ -12,7 +15,7 @@ class AddNoteBottomSheet extends StatelessWidget {
       color: HexColor('333739'),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Container(
+        child: SingleChildScrollView(
           child: Column(children: [
             SizedBox(
               height: 25,
@@ -24,7 +27,14 @@ class AddNoteBottomSheet extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            CustomTextField(hint: 'Content', maxLines: 5)
+            CustomTextField(hint: 'Content', maxLines: 5),
+            SizedBox(
+              height: 32,
+            ),
+            CustomButton(),
+            SizedBox(
+              height: 22,
+            )
           ]),
         ),
       ),

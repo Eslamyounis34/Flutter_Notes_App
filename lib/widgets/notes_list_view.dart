@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hive_notes_app/widgets/note_item.dart';
 
 import '../shared/components/components.dart';
 
@@ -14,7 +15,7 @@ class NotesListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(vertical: 4),
-              child: buildNoteItem(),
+              child: NoteItem(),
             );
           }),
     );

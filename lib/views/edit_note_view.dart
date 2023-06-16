@@ -11,9 +11,9 @@ class EditNoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
-          children: [
+          children: const [
             SizedBox(
               height: 50,
             ),

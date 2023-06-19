@@ -9,7 +9,6 @@ class CustomTextField extends StatelessWidget {
 
   final String hint;
   final int maxLines;
-
   final void Function(String?)? onSaved;
 
   @override

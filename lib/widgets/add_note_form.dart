@@ -6,6 +6,7 @@ import 'package:hive_notes_app/models/note_model.dart';
 
 import 'custom_button.dart';
 import 'custom_text_field.dart';
+import 'package:intl/intl.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -56,10 +57,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
               onTap: () {
                 if (formKey.currentState!.validate()) {
                   formKey.currentState!.save();
+                  DateTime now = DateTime.now();
+                  String formatDate = DateFormat('yy-MM-DD').format(now);
                   var noteModel = NoteModel(
                       title: title!,
                       content: content!,
-                      date: DateTime.now().toString(),
+                      date: formatDate,
                       color: Colors.blue.value.toInt());
                   BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                 } else {

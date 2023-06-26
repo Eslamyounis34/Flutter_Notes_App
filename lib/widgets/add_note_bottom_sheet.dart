@@ -15,7 +15,10 @@ class AddNoteBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: HexColor('333739'),
+      decoration: BoxDecoration(
+          color: HexColor('333739'),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12),
         child: BlocConsumer<AddNoteCubit, AddNoteCubitState>(

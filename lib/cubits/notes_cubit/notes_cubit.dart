@@ -9,15 +9,13 @@ part 'notes_state.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
+  List<NoteModel>? notesList;
 
-  getNotes() async {
-    try {
-      var notesBox = Hive.box<NoteModel>(kNotesBox);
-      var notesList = notesBox.values.toList();
-      emit(NotesSucess(notesList));
-    } catch (e) {
-      emit(NotesFailure(e.toString()));
-      print(e.toString());
-    }
+  getNotes() {
+// we don't need  try/catch As result is not future ,, it is get method
+    var notesBox = Hive.box<NoteModel>(kNotesBox);
+    notesList = notesBox.values.toList();
+    print('testNotesList : ' + notesList.toString());
+    emit(NotesSucess());
   }
 }

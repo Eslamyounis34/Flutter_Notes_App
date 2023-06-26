@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:hive_notes_app/shared/components/components.dart';
 import 'package:hive_notes_app/widgets/add_note_bottom_sheet.dart';
+import 'package:hive_notes_app/widgets/notes_view_body.dart';
 
 import '../widgets/custom_app_bar.dart';
 import '../widgets/notes_list_view.dart';
@@ -19,39 +20,24 @@ class NotesView extends StatelessWidget {
     return BlocProvider(
       create: (context) => NotesCubit(),
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              showModalBottomSheet(
-                  isScrollControlled: true,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20))),
-                  context: context,
-                  builder: (context) {
-                    return AddNoteBottomSheet();
-                  });
-            },
-            child: Icon(Icons.add),
-            backgroundColor: Colors.grey,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16))),
-        body: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: const [
-              SizedBox(
-                height: 50,
-              ),
-              CustomeAppBar(
-                title: 'Notes',
-                icon: Icons.search,
-              ),
-              Expanded(child: const NotesListView())
-            ],
-          ),
-        ),
-      ),
+          floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                showModalBottomSheet(
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20))),
+                    context: context,
+                    builder: (context) {
+                      return AddNoteBottomSheet();
+                    });
+              },
+              child: Icon(Icons.add),
+              backgroundColor: Colors.grey,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16))),
+          body: NotesViewBody()),
     );
   }
 }

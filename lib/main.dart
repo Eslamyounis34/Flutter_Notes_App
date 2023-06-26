@@ -21,18 +21,11 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => AddNoteCubit(),
-        ),
-      ],
-      child: MaterialApp(
-        theme: darkTheme,
-        darkTheme: darkTheme,
-        home: const NotesView(),
-        debugShowCheckedModeBanner: false,
-      ),
+    return MaterialApp(
+      theme: darkTheme,
+      darkTheme: darkTheme,
+      home: const NotesView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

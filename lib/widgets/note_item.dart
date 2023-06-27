@@ -8,6 +8,7 @@ import 'package:hive_notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:hive_notes_app/models/note_model.dart';
 import 'package:hive_notes_app/shared/components/components.dart';
 import 'package:hive_notes_app/views/edit_note_view.dart';
+import 'package:hive_notes_app/widgets/custome_alert_dialog.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
@@ -35,7 +36,7 @@ class NoteItem extends StatelessWidget {
             ListTile(
               title: Text(
                 note.title,
-                style: TextStyle(color: Colors.black, fontSize: 26),
+                style: TextStyle(color: Colors.black, fontSize: 28),
               ),
               subtitle: Padding(
                 padding: EdgeInsets.only(top: 12.0),
@@ -45,9 +46,16 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {
-                  note.delete();
-                  showToast(msg: 'Note Deleted Successfully');
-                  BlocProvider.of<NotesCubit>(context).getNotes();
+                  showDialog(
+                      context: context,
+                      builder: (context) => CustomAlert(
+                            title: 'Delete Note ?',
+                            content:
+                                'If you delete Note , You will not be able to retore it ',
+                            onPressed: () {
+                              deleteNote(context);
+                            },
+                          ));
                 },
                 icon: Icon(
                   FontAwesomeIcons.trash,
@@ -67,5 +75,12 @@ class NoteItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void deleteNote(BuildContext context) {
+    note.delete();
+    showToast(msg: 'Note Deleted Successfully');
+    Navigator.pop(context);
+    BlocProvider.of<NotesCubit>(context).getNotes();
   }
 }

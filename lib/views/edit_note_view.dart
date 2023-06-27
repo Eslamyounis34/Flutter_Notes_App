@@ -35,6 +35,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                 widget.note.title = title ?? widget.note.title;
                 widget.note.content = content ?? widget.note.content;
                 widget.note.save();
+                showToast(msg: 'Updated Successfully');
                 BlocProvider.of<NotesCubit>(context).getNotes();
                 Navigator.pop(context);
               },

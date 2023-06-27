@@ -5,17 +5,23 @@ import 'package:hive_notes_app/shared/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.hint, required this.maxLines, this.onSaved});
+      {super.key,
+      required this.hint,
+      required this.maxLines,
+      this.onSaved,
+      this.onChanged});
 
   final String hint;
   final int maxLines;
   final void Function(String?)? onSaved;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       style: TextStyle(color: Colors.white),
       onSaved: onSaved,
+      onChanged: onChanged,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'Field is required';

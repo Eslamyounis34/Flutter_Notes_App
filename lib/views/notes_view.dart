@@ -17,27 +17,24 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
 
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
-          floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                showModalBottomSheet(
-                    isScrollControlled: true,
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20))),
-                    context: context,
-                    builder: (context) {
-                      return AddNoteBottomSheet();
-                    });
-              },
-              child: Icon(Icons.add),
-              backgroundColor: Colors.grey,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16))),
-          body: NotesViewBody()),
-    );
+    return Scaffold(
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              showModalBottomSheet(
+                  isScrollControlled: true,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20))),
+                  context: context,
+                  builder: (context) {
+                    return AddNoteBottomSheet();
+                  });
+            },
+            child: Icon(Icons.add),
+            backgroundColor: Colors.grey,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16))),
+        body: NotesViewBody());
   }
 }

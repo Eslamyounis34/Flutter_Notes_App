@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:hive_notes_app/models/note_model.dart';
+import 'package:hive_notes_app/shared/components/components.dart';
 import 'package:hive_notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
@@ -42,6 +43,7 @@ class NoteItem extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () {
                   note.delete();
+                  showToast(msg: 'Note Deleted Successfully');
                   BlocProvider.of<NotesCubit>(context).getNotes();
                 },
                 icon: Icon(
